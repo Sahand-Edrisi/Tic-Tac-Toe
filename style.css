@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #d1d0dc;
+  background-color: #040404;
 }
 .ticTacToe {
   display: grid;
@@ -21,7 +21,7 @@
 }
 #table {
   margin-top: 20px;
-  border: 2px solid #040303;
+  border: 2px solid #ffffff;
   width: 300px;
   position: relative;
 }
@@ -34,10 +34,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid #040303;
+  border:2px solid #ffffff;
   width: 100px;
   height: 100px;
-  background-color: aliceblue;
+  background-color: rgb(0, 0, 0);
 }
 .btnReload {
   margin-top: 20px;
@@ -66,36 +66,86 @@
 .circle {
   width: 85px;
   height: 85px;
-  border: 10px solid rgb(241, 78, 8);
+  border: 10px solid rgb(255, 255, 255);
   border-radius: 50%;
-  background-color: aliceblue;
+  background-color: rgb(0, 0, 0);
 }
-.line1 {
+.circleWin {
+  width: 85px;
+  height: 85px;
+  border: 10px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  background-color: rgb(0, 0, 0);
+  animation-name: winkCircle;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-iteration-count: 2;
+}
+@keyframes winkCircle {
+  0% {
+    border: 0px;
+  }
+  100% {
+    border: 10px solid rgb(255, 255, 255);
+  }
+}
+.multiplicationLine1 {
   position: relative;
   width: 95px;
   height: 15px;
-  background-color: #1908db;
+  background-color: #fff;
   transform: rotateZ(45deg);
 }
-.line2 {
+.multiplicationLine2 {
   position: absolute;
   width: 95px;
   height: 15px;
-  background-color: #1908db;
+  background-color: #fff;
   transform: rotateZ(-45deg);
+}
+.multiplicationLine1Win {
+  position: relative;
+  width: 95px;
+  height: 15px;
+  background-color: #fff;
+  transform: rotateZ(45deg);
+  animation-name: winkMultiplicationLine1;
+  animation-duration: 2s;
+  animation-delay: 0.5s;
+  animation-iteration-count: 2;
+}
+@keyframes winkMultiplicationLine1 {
+  0% {
+    background-color: rgb(0, 0, 0);
+  }
+  100% {
+    background-color: #fff;
+  }
+}
+.multiplicationLine2Win {
+  position: absolute;
+  width: 95px;
+  height: 15px;
+  background-color: #fff;
+  transform: rotateZ(-45deg);
+  animation-name: winkMultiplicationLine2;
+  animation-duration: 2s;
+  animation-delay: 0.5s;
+  animation-iteration-count: 2;
+}
+@keyframes winkMultiplicationLine2 {
+  0% {
+    background-color: rgb(0, 0, 0);
+  }
+  100% {
+    background-color: #fff;
+  }
 }
 
 #user2 {
   display: none;
 }
-.textStyleUser {
-  margin-top: 20px;
-  padding: 10px;
-  border-radius: 15px;
-  color: rgb(241, 78, 8);
-  font-weight: 900;
-  background-color: #19191e;
-}
+
 .textStyleUser1 {
   margin-top: 20px;
   padding: 10px;
@@ -111,6 +161,12 @@
   color: rgb(8, 124, 241);
   font-weight: 900;
   background-color: #19191e;
+}
+.detailGame{
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @media screen and (max-width: 390px) {

@@ -9,7 +9,6 @@
   <body>
     <div class="ticTacToe">
       <p class="title">Start Play Tic-Tac-Toe Game in JavaScript</p>
-      <button class="btnReload" onclick="reloadPage()">Reload Game</button>
    
       <div id="table">
         <div class="tr">
@@ -28,10 +27,13 @@
           <div class="th" id="userClicked" onclick="thClicked(event)"></div>
         </div>
       </div>
-      <div class="winUser1">win user 1</div>
-      <div class="winUser2">win user 2</div>
-      <p id="user1" class="textStyleUser1">user 1 Start</p>
-      <p id="user2" class="textStyleUser2">user 2 Start</p>
+      <div class="detailGame">
+        <div class="winUser1">win user 1</div>
+        <div class="winUser2">win user 2</div>
+        <p id="user1" class="textStyleUser1">user 1 Start</p>
+        <p id="user2" class="textStyleUser2">user 2 Start</p>
+        <button class="btnReload" onclick="reloadPage()">Reload Game</button>
+      </div>
     </div>
 
     <script src="./script.js"></script>
