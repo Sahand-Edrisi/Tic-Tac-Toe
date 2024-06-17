@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #d1d0dc;
+}
+.ticTacToe {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+}
+
+.title {
+  margin-top: 5px;
+  font-weight: 900;
+  font-size: 20px;
+  background-color: #52714d;
+  color: aliceblue;
+  padding: 10px;
+  border-radius: 20px;
+}
+#table {
+  margin-top: 20px;
+  border: 2px solid #040303;
+  width: 300px;
+  position: relative;
+}
+.tr {
+  display: flex;
+}
+.th,
+.insideMulti,
+.insideCircle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #040303;
+  width: 100px;
+  height: 100px;
+  background-color: aliceblue;
+}
+.btnReload {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 15px;
+  border: 3px solid rgb(20, 229, 170);
+  color: rgb(20, 229, 170);
+  background-color: #070505;
+}
+.winUser1,
+.winUser2 {
+  display: none;
+}
+.winShow {
+  border-radius: 10px;
+  background-color: #1e1e2f;
+  opacity: 0.8;
+  font-weight: 900;
+  display: block;
+  margin: 20px 0;
+  padding: 10px;
+  color: rgb(88, 228, 12);
+  font-size: 35px;
+}
+
+.circle {
+  width: 85px;
+  height: 85px;
+  border: 10px solid rgb(241, 78, 8);
+  border-radius: 50%;
+  background-color: aliceblue;
+}
+.line1 {
+  position: relative;
+  width: 95px;
+  height: 15px;
+  background-color: #1908db;
+  transform: rotateZ(45deg);
+}
+.line2 {
+  position: absolute;
+  width: 95px;
+  height: 15px;
+  background-color: #1908db;
+  transform: rotateZ(-45deg);
+}
+
+#user2 {
+  display: none;
+}
+.textStyleUser {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 15px;
+  color: rgb(241, 78, 8);
+  font-weight: 900;
+  background-color: #19191e;
+}
+.textStyleUser1 {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 15px;
+  color: rgb(241, 78, 8);
+  font-weight: 900;
+  background-color: #19191e;
+}
+.textStyleUser2 {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 15px;
+  color: rgb(8, 124, 241);
+  font-weight: 900;
+  background-color: #19191e;
+}
+
+@media screen and (max-width: 390px) {
+  .title {
+    font-size: 19px !important;
+    padding: 8px;
+  }
+}
+@media screen and (max-width: 370px) {
+  .title {
+    font-size: 18px !important;
+    padding: 7px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .title {
+    font-size: 17px !important;
+  }
+}
+@media screen and (max-width: 355px) {
+  .title {
+    font-size: 15px !important;
+    padding: 5px;
+  }
+}
