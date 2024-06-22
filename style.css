@@ -42,25 +42,30 @@
 .btnReload {
   margin-top: 20px;
   padding: 10px;
-  border-radius: 15px;
-  border: 3px solid rgb(20, 229, 170);
+  border-radius: 50%;
+  border: none;
   color: rgb(20, 229, 170);
-  background-color: #070505;
 }
-.winUser1,
-.winUser2 {
+.btnReload i{
+  font-size: 35px;
+}
+.winUser1,.winUser2{
   display: none;
 }
-.winShow {
-  border-radius: 10px;
-  background-color: #1e1e2f;
-  opacity: 0.8;
-  font-weight: 900;
-  display: block;
-  margin: 20px 0;
+#oneUserPlay{
+  margin-top: 20px;
   padding: 10px;
-  color: rgb(88, 228, 12);
-  font-size: 35px;
+  color: rgb(20, 229, 170);
+  border: none;
+  font-size: 30px;
+  display: none;
+}
+#twoUserPlay{
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  color: rgb(20, 229, 170);
+  font-size: 30px;
 }
 
 .circle {
@@ -146,21 +151,23 @@
   display: none;
 }
 
-.textStyleUser1 {
+.textStyleUser1 i{
   margin-top: 20px;
   padding: 10px;
-  border-radius: 15px;
+  border-radius: 50%;
   color: rgb(241, 78, 8);
+  border: 3px solid rgb(241, 78, 8);
   font-weight: 900;
-  background-color: #19191e;
+  font-size: 35px;
 }
-.textStyleUser2 {
+.textStyleUser2 i{
   margin-top: 20px;
   padding: 10px;
-  border-radius: 15px;
+  border-radius: 50%;
+  border: 3px solid rgb(8, 124, 241);
   color: rgb(8, 124, 241);
   font-weight: 900;
-  background-color: #19191e;
+  font-size: 35px;
 }
 .detailGame{
   display: flex;
