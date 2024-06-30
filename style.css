@@ -8,6 +8,7 @@
   display: grid;
   justify-content: center;
   justify-items: center;
+  margin-top: 50px;
 }
 
 .title {
@@ -20,7 +21,7 @@
   border-radius: 20px;
 }
 #table {
-  margin-top: 20px;
+  margin-top: 10px;
   border: 2px solid #ffffff;
   width: 300px;
   position: relative;
@@ -34,38 +35,39 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border:2px solid #ffffff;
+  border: 2px solid #ffffff;
   width: 100px;
   height: 100px;
   background-color: rgb(0, 0, 0);
 }
 .btnReload {
-  margin-top: 20px;
+  margin-top: 5px;
   padding: 10px;
   border-radius: 50%;
   border: none;
   color: rgb(20, 229, 170);
 }
-.btnReload i{
-  font-size: 35px;
+.btnReload i {
+  font-size: 25px;
 }
-.winUser1,.winUser2{
+.winUser1,
+.winUser2 {
   display: none;
 }
-#oneUserPlay{
-  margin-top: 20px;
+#oneUserPlay {
+  margin-top: 5px;
   padding: 10px;
   color: rgb(20, 229, 170);
   border: none;
-  font-size: 30px;
+  font-size: 25px;
   display: none;
 }
-#twoUserPlay{
-  margin-top: 20px;
+#twoUserPlay {
+  margin-top: 5px;
   padding: 10px;
   border: none;
   color: rgb(20, 229, 170);
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .circle {
@@ -147,33 +149,35 @@
   }
 }
 
-#user2 {
-  display: none;
+/* .winShow{
+  display: grid;
+  justify-items: center;
+} */
+/* .winShow p{
+  color: #fff;
+  font-size: 25px;
+  color: rgb(20, 229, 170);
+} */
+.detailGame p {
+  color: rgb(20, 229, 170);
+  font-size: 20px;
 }
-
-.textStyleUser1 i{
-  margin-top: 20px;
-  padding: 10px;
-  border-radius: 50%;
-  color: rgb(241, 78, 8);
-  border: 3px solid rgb(241, 78, 8);
-  font-weight: 900;
-  font-size: 35px;
+.StyleUser1 i {
+  padding-right: 5px;
+  color: rgb(20, 229, 170);
+  font-size: 20px;
 }
-.textStyleUser2 i{
-  margin-top: 20px;
-  padding: 10px;
-  border-radius: 50%;
-  border: 3px solid rgb(8, 124, 241);
-  color: rgb(8, 124, 241);
-  font-weight: 900;
-  font-size: 35px;
+.StyleUser2 i {
+  padding-right: 5px;
+  color: rgb(20, 229, 170);
+  font-size: 20px;
 }
-.detailGame{
+.detailGame {
   display: flex;
   width: 300px;
   justify-content: space-between;
   align-items: center;
+  justify-items: center;
 }
 
 @media screen and (max-width: 390px) {

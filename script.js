@@ -29,8 +29,8 @@ function createCircle() {
   _th.appendChild(div);
   _th.setAttribute("class", "insideCircle");
   _th.removeAttribute("onclick");
-  user1.style = "display : none;";
-  user2.style = "display : block;";
+  // user1.style = "display : none;";
+  // user2.style = "display : block;";
 }
 
 function CreateMultiplication() {
@@ -42,8 +42,8 @@ function CreateMultiplication() {
   _th.appendChild(div2);
   _th.setAttribute("class", "insideMulti");
   _th.removeAttribute("onclick");
-  user2.style = "display : none;";
-  user1.style = "display : block;";
+  // user2.style = "display : none;";
+  // user1.style = "display : block;";
 }
 
 function user2Auto() {
@@ -61,8 +61,8 @@ function user2Auto() {
     random.appendChild(div2);
     random.setAttribute("class", "insideMulti");
     random.removeAttribute("onclick");
-    user2.style = "display : none;";
-    user1.style = "display : block;";
+    // user2.style = "display : none;";
+    // user1.style = "display : block;";
     User2();
   } else {
     reloadWhenNOWin();
@@ -117,6 +117,18 @@ function reloadWhenNOWin() {
   }
 }
 
+function countUser1(){
+  let user1 = document.getElementById("user1")
+  let changeTypeOf = Number(user1.innerText)
+  let result = changeTypeOf + 1 
+  user1.innerHTML = result
+}
+function countUser2(){
+  let user2 = document.getElementById("user2")
+  let changeTypeOf = Number(user2.innerText)
+  let result = changeTypeOf + 1 
+  user2.innerHTML = result
+}
 function User1() {
   if (
     userClicked[0].className == "insideCircle" &&
@@ -126,7 +138,8 @@ function User1() {
     userClicked[0].lastChild.setAttribute("class", "circleWin");
     userClicked[1].lastChild.setAttribute("class", "circleWin");
     userClicked[2].lastChild.setAttribute("class", "circleWin");
-    winUser1();
+    winUser1();  
+    countUser1()  
   } else if (
     userClicked[3].className == "insideCircle" &&
     userClicked[4].className == "insideCircle" &&
@@ -136,6 +149,7 @@ function User1() {
     userClicked[4].lastChild.setAttribute("class", "circleWin");
     userClicked[5].lastChild.setAttribute("class", "circleWin");
     winUser1();
+    countUser1()
   } else if (
     userClicked[6].className == "insideCircle" &&
     userClicked[7].className == "insideCircle" &&
@@ -145,6 +159,7 @@ function User1() {
     userClicked[7].lastChild.setAttribute("class", "circleWin");
     userClicked[8].lastChild.setAttribute("class", "circleWin");
     winUser1();
+    countUser1()
   } else if (
     userClicked[0].className == "insideCircle" &&
     userClicked[3].className == "insideCircle" &&
@@ -154,6 +169,7 @@ function User1() {
     userClicked[3].lastChild.setAttribute("class", "circleWin");
     userClicked[6].lastChild.setAttribute("class", "circleWin");
     winUser1();
+    countUser1()
   } else if (
     userClicked[1].className == "insideCircle" &&
     userClicked[4].className == "insideCircle" &&
@@ -163,6 +179,7 @@ function User1() {
     userClicked[4].lastChild.setAttribute("class", "circleWin");
     userClicked[7].lastChild.setAttribute("class", "circleWin");
     winUser1();
+    countUser1()
   } else if (
     userClicked[2].className == "insideCircle" &&
     userClicked[5].className == "insideCircle" &&
@@ -172,6 +189,7 @@ function User1() {
     userClicked[5].lastChild.setAttribute("class", "circleWin");
     userClicked[8].lastChild.setAttribute("class", "circleWin");
     winUser1();
+    countUser1()
   } else if (
     userClicked[2].className == "insideCircle" &&
     userClicked[4].className == "insideCircle" &&
@@ -181,6 +199,7 @@ function User1() {
     userClicked[4].lastChild.setAttribute("class", "circleWin");
     userClicked[6].lastChild.setAttribute("class", "circleWin");
     winUser1();
+    countUser1()
   } else if (
     userClicked[0].className == "insideCircle" &&
     userClicked[4].className == "insideCircle" &&
@@ -190,6 +209,7 @@ function User1() {
     userClicked[4].lastChild.setAttribute("class", "circleWin");
     userClicked[8].lastChild.setAttribute("class", "circleWin");
     winUser1();
+    countUser1()
   } else {
     return false;
   }
@@ -208,6 +228,7 @@ function User2() {
     userClicked[1].children[1].setAttribute("class", "multiplicationLine2Win");
     userClicked[2].children[1].setAttribute("class", "multiplicationLine2Win");
     winUser2();
+    countUser2()
   } else if (
     userClicked[3].className == "insideMulti" &&
     userClicked[4].className == "insideMulti" &&
@@ -220,6 +241,7 @@ function User2() {
     userClicked[4].children[1].setAttribute("class", "multiplicationLine2Win");
     userClicked[5].children[1].setAttribute("class", "multiplicationLine2Win");
     winUser2();
+    countUser2()
   } else if (
     userClicked[6].className == "insideMulti" &&
     userClicked[7].className == "insideMulti" &&
@@ -232,6 +254,7 @@ function User2() {
     userClicked[7].children[1].setAttribute("class", "multiplicationLine2Win");
     userClicked[8].children[1].setAttribute("class", "multiplicationLine2Win");
     winUser2();
+    countUser2()
   } else if (
     userClicked[0].className == "insideMulti" &&
     userClicked[3].className == "insideMulti" &&
@@ -244,6 +267,7 @@ function User2() {
     userClicked[3].children[1].setAttribute("class", "multiplicationLine2Win");
     userClicked[6].children[1].setAttribute("class", "multiplicationLine2Win");
     winUser2();
+    countUser2()
   } else if (
     userClicked[1].className == "insideMulti" &&
     userClicked[4].className == "insideMulti" &&
@@ -256,6 +280,7 @@ function User2() {
     userClicked[4].children[1].setAttribute("class", "multiplicationLine2Win");
     userClicked[7].children[1].setAttribute("class", "multiplicationLine2Win");
     winUser2();
+    countUser2()
   } else if (
     userClicked[2].className == "insideMulti" &&
     userClicked[5].className == "insideMulti" &&
@@ -268,6 +293,7 @@ function User2() {
     userClicked[5].children[1].setAttribute("class", "multiplicationLine2Win");
     userClicked[8].children[1].setAttribute("class", "multiplicationLine2Win");
     winUser2();
+    countUser2()
   } else if (
     userClicked[2].className == "insideMulti" &&
     userClicked[4].className == "insideMulti" &&
@@ -280,6 +306,7 @@ function User2() {
     userClicked[4].children[1].setAttribute("class", "multiplicationLine2Win");
     userClicked[6].children[1].setAttribute("class", "multiplicationLine2Win");
     winUser2();
+    countUser2()
   } else if (
     userClicked[0].className == "insideMulti" &&
     userClicked[4].className == "insideMulti" &&
@@ -292,6 +319,7 @@ function User2() {
     userClicked[4].children[1].setAttribute("class", "multiplicationLine2Win");
     userClicked[8].children[1].setAttribute("class", "multiplicationLine2Win");
     winUser2();
+    countUser2()
   }
 }
 
@@ -300,8 +328,8 @@ function winUser1() {
   let multiplicationLine1 = document.querySelectorAll(".multiplicationLine1");
   let multiplicationLine2 = document.querySelectorAll(".multiplicationLine2");
   let circle = document.querySelectorAll(".circle");
-  user1.style = "display : block";
-  user2.style = "display : none";
+  // user1.style = "display : block";
+  // user2.style = "display : none";
   for (let i = 0; i < multiplicationLine2.length; i++) {
     multiplicationLine1[i].style =
       "background-color : rgba(255, 255, 255, 0.36)";
@@ -319,8 +347,8 @@ function winUser2() {
   let circle = document.querySelectorAll(".circle");
   let multiplicationLine1 = document.querySelectorAll(".multiplicationLine1");
   let multiplicationLine2 = document.querySelectorAll(".multiplicationLine2");
-  user1.style = "display : none";
-  user2.style = "display : block";
+  // user1.style = "display : none";
+  // user2.style = "display : block";
   for (let i = 0; i < circle.length; i++) {
     circle[i].style = "border-color : rgba(255, 255, 255, 0.36)";
   }
