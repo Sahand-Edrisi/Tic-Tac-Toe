@@ -3,14 +3,55 @@ let user2 = document.getElementById("user2");
 let userClicked = document.querySelectorAll("#userClicked");
 let winUser1Show = document.querySelector(".winUser1");
 let winUser2Show = document.querySelector(".winUser2");
+let _th;
+
+function oneUser() {
+  twoUserPlay.style = "display :block";
+  oneUserPlay.style = "display :none";
+  reloadPage();
+}
+function twoUser() {
+  twoUserPlay.style = "display :none";
+  oneUserPlay.style = "display :block";
+  reloadPage();
+}
+
+function allThRemOn() {
+  let allThRemoveOnclick = document.querySelectorAll(".th");
+  for (let i = 0; i < allThRemoveOnclick.length; i++) {
+    allThRemoveOnclick[i].removeAttribute("onclick");
+  }
+}
+
+function createCircle() {
+  let div = document.createElement("div");
+  div.setAttribute("class", "circle");
+  _th.appendChild(div);
+  _th.setAttribute("class", "insideCircle");
+  _th.removeAttribute("onclick");
+  user1.style = "display : none;";
+  user2.style = "display : block;";
+}
+
+function CreateMultiplication() {
+  let div1 = document.createElement("div");
+  let div2 = document.createElement("div");
+  div1.setAttribute("class", "multiplicationLine1");
+  div2.setAttribute("class", "multiplicationLine2");
+  _th.appendChild(div1);
+  _th.appendChild(div2);
+  _th.setAttribute("class", "insideMulti");
+  _th.removeAttribute("onclick");
+  user2.style = "display : none;";
+  user1.style = "display : block;";
+}
 
 function user2Auto() {
   let allTh = document.querySelectorAll(".th");
   function getRandomNumber(allTh) {
     return allTh[Math.floor(Math.random() * allTh.length)];
   }
-  if (allTh.length > 1) {
-    console.log(allTh.length);
+  if (allTh.length > 0) {
     let random = getRandomNumber(allTh);
     let div1 = document.createElement("div");
     let div2 = document.createElement("div");
@@ -24,12 +65,31 @@ function user2Auto() {
     user1.style = "display : block;";
     User2();
   } else {
-    console.log("object");
-    setTimeout(removeCIrcles, 2000);
+    reloadWhenNOWin();
   }
 }
 
-function removeCIrcles() {
+function thClicked(event) {
+  _th = event.target;
+  let allTh = document.querySelectorAll(".th");
+  if (oneUserPlay.style.display == "block") {
+    createCircle();
+    if (User1() == false) {
+      user2Auto();
+    }
+  } else {
+    if (allTh.length % 2 != 0) {
+      createCircle();
+      User1();
+    } else if (allTh.length % 2 == 0) {
+      CreateMultiplication();
+      User2();
+    }
+    reloadWhenNOWin();
+  }
+}
+
+function reloadPage() {
   let insideCircle = document.querySelectorAll(".insideCircle");
   let insideMulti = document.querySelectorAll(".insideMulti");
   let allTh = document.querySelectorAll(".th");
@@ -50,119 +110,13 @@ function removeCIrcles() {
   }
 }
 
-function oneUser() {
-  twoUserPlay.style = "display :block";
-  oneUserPlay.style = "display :none";
-  removeCIrcles();
-}
-function twoUser() {
-  twoUserPlay.style = "display :none";
-  oneUserPlay.style = "display :block";
-  removeCIrcles();
-}
-
-function allThRemOn() {
-  let allThRemoveOnclick = document.querySelectorAll(".th");
-  for (let i = 0; i < allThRemoveOnclick.length; i++) {
-    allThRemoveOnclick[i].removeAttribute("onclick");
-  }
-}
-
-function winUser1() {
-  let multiplicationLine1 = document.querySelectorAll(".multiplicationLine1");
-  let multiplicationLine2 = document.querySelectorAll(".multiplicationLine2");
-  let circle = document.querySelectorAll(".circle");
-  user1.style = "display : block";
-  user2.style = "display : none";
-  allThRemOn();
-  for (let i = 0; i < multiplicationLine2.length; i++) {
-    multiplicationLine1[i].style =
-      "background-color : rgba(255, 255, 255, 0.36)";
-    multiplicationLine2[i].style =
-      "background-color : rgba(255, 255, 255, 0.36)";
-  }
-  for (let i = 0; i < circle.length; i++) {
-    circle[i].style = "border-color : rgba(255, 255, 255, 0.36)";
-  }
-  setTimeout(removeCIrcles, 5000);
-}
-
-function winUser2() {
-  let circle = document.querySelectorAll(".circle");
-  let multiplicationLine1 = document.querySelectorAll(".multiplicationLine1");
-  let multiplicationLine2 = document.querySelectorAll(".multiplicationLine2");
-  user1.style = "display : none";
-  user2.style = "display : block";
-  allThRemOn();
-  for (let i = 0; i < circle.length; i++) {
-    circle[i].style = "border-color : rgba(255, 255, 255, 0.36)";
-  }
-  for (let i = 0; i < multiplicationLine1.length; i++) {
-    multiplicationLine1[i].style =
-      "background-color : rgba(255, 255, 255, 0.36)";
-    multiplicationLine2[i].style =
-      "background-color : rgba(255, 255, 255, 0.36)";
-  }
-  setTimeout(removeCIrcles, 5000);
-}
-
-function reloadPage() {
-  removeCIrcles();
-}
-
-function thClicked(event) {
-  let th = event.target;
-  let allTh = document.querySelectorAll(".th");
-  if (oneUserPlay.style.display == "block"){
-    if (allTh.length % 2 != 0) {
-      let div = document.createElement("div");
-      div.setAttribute("class", "circle");
-      th.appendChild(div);
-      th.setAttribute("class", "insideCircle");
-      th.removeAttribute("onclick");
-      user1.style = "display : none;";
-      user2.style = "display : block;";
-      if(User1()){
-        setTimeout(removeCIrcles, 5000);
-      }else{
-        user2Auto();
-      }
-      reloadWhenNOWin();
-    }
-  } else {
-    if (allTh.length % 2 != 0) {
-      let div = document.createElement("div");
-      div.setAttribute("class", "circle");
-      th.appendChild(div);
-      th.setAttribute("class", "insideCircle");
-      th.removeAttribute("onclick");
-      user1.style = "display : none;";
-      user2.style = "display : block;";
-      User1();
-    } else if (allTh.length % 2 == 0) {
-      let div1 = document.createElement("div");
-      let div2 = document.createElement("div");
-      div1.setAttribute("class", "multiplicationLine1");
-      div2.setAttribute("class", "multiplicationLine2");
-      th.appendChild(div1);
-      th.appendChild(div2);
-      th.setAttribute("class", "insideMulti");
-      th.removeAttribute("onclick");
-      user2.style = "display : none;";
-      user1.style = "display : block;";
-      User2();
-    }
-    reloadWhenNOWin();
-  }
-  
-}
-
 function reloadWhenNOWin() {
   let allTh = document.querySelectorAll(".th");
   if (allTh.length == 0) {
-    setTimeout(reloadPage, 2000);
+    setTimeout(reloadPage, 3000);
   }
 }
+
 function User1() {
   if (
     userClicked[0].className == "insideCircle" &&
@@ -236,6 +190,8 @@ function User1() {
     userClicked[4].lastChild.setAttribute("class", "circleWin");
     userClicked[8].lastChild.setAttribute("class", "circleWin");
     winUser1();
+  } else {
+    return false;
   }
 }
 
@@ -337,4 +293,42 @@ function User2() {
     userClicked[8].children[1].setAttribute("class", "multiplicationLine2Win");
     winUser2();
   }
+}
+
+function winUser1() {
+  allThRemOn();
+  let multiplicationLine1 = document.querySelectorAll(".multiplicationLine1");
+  let multiplicationLine2 = document.querySelectorAll(".multiplicationLine2");
+  let circle = document.querySelectorAll(".circle");
+  user1.style = "display : block";
+  user2.style = "display : none";
+  for (let i = 0; i < multiplicationLine2.length; i++) {
+    multiplicationLine1[i].style =
+      "background-color : rgba(255, 255, 255, 0.36)";
+    multiplicationLine2[i].style =
+      "background-color : rgba(255, 255, 255, 0.36)";
+  }
+  for (let i = 0; i < circle.length; i++) {
+    circle[i].style = "border-color : rgba(255, 255, 255, 0.36)";
+  }
+  setTimeout(reloadPage, 3000);
+}
+
+function winUser2() {
+  allThRemOn();
+  let circle = document.querySelectorAll(".circle");
+  let multiplicationLine1 = document.querySelectorAll(".multiplicationLine1");
+  let multiplicationLine2 = document.querySelectorAll(".multiplicationLine2");
+  user1.style = "display : none";
+  user2.style = "display : block";
+  for (let i = 0; i < circle.length; i++) {
+    circle[i].style = "border-color : rgba(255, 255, 255, 0.36)";
+  }
+  for (let i = 0; i < multiplicationLine1.length; i++) {
+    multiplicationLine1[i].style =
+      "background-color : rgba(255, 255, 255, 0.36)";
+    multiplicationLine2[i].style =
+      "background-color : rgba(255, 255, 255, 0.36)";
+  }
+  setTimeout(reloadPage, 3000);
 }
