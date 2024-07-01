@@ -15,38 +15,52 @@
       <p class="title">Start Play Tic-Tac-Toe Game in JavaScript</p>
 
       <div id="table">
-        <div class="tr">
+        <div class="tr1">
           <div class="th" id="userClicked" onclick="thClicked(event)"></div>
           <div class="th" id="userClicked" onclick="thClicked(event)"></div>
           <div class="th" id="userClicked" onclick="thClicked(event)"></div>
         </div>
-        <div class="tr">
+        <div class="tr2">
           <div class="th" id="userClicked" onclick="thClicked(event)"></div>
           <div class="th" id="userClicked" onclick="thClicked(event)"></div>
           <div class="th" id="userClicked" onclick="thClicked(event)"></div>
         </div>
-        <div class="tr">
+        <div class="tr3">
           <div class="th" id="userClicked" onclick="thClicked(event)"></div>
           <div class="th" id="userClicked" onclick="thClicked(event)"></div>
           <div class="th" id="userClicked" onclick="thClicked(event)"></div>
         </div>
       </div>
       <div class="detailGame">
+        <button class="btnReloadCount" onclick="reloadCunt()">
+          <i class="fa-solid fa-rotate-right"></i><span>Count</span> 
+        </button>
         <p class="StyleUser1">
-          <i class="fa-regular fa-circle"></i><span id="user1">= 0</span>
+          <i class="fa-regular fa-circle"></i>= <span id="user1">0</span>
         </p>
         <p class="StyleUser2">
-          <i class="fa-solid fa-xmark"></i><span id="user2">= 0</span>
+          <i class="fa-solid fa-xmark"></i>= <span id="user2">0</span>
         </p>
         <button class="btnReload" onclick="reloadPage()">
           <i class="fa fa-refresh" aria-hidden="true"></i>
+          <span>Game</span>
         </button>
         <button id="oneUserPlay" onclick="oneUser()">
-          <i class="fa-solid fa-user"></i>
+          <div class="container">
+            <i class="fa-solid fa-user"></i>
+            <span>One user</span>
+          </div>
         </button>
         <button id="twoUserPlay" onclick="twoUser()">
-          <i class="fa-solid fa-user-group"></i>
+          <div class="container">
+            <i class="fa-solid fa-user-group"></i>
+            <span>Two user</span>
+          </div>
         </button>
+        <audio id="soundUser1" onclick="soundUser1()" src="Sounds/user1.mp3"></audio>
+        <audio id="soundUser2" onclick="soundUser2()" src="Sounds/user2.mp3"></audio>
+        <audio id="soundReload" onclick="soundReload()" src="Sounds/reload.mp3"></audio>
+        <audio id="soundWin" onclick="soundWin()" src="Sounds/win.mp3"></audio>
       </div>
     </div>
 

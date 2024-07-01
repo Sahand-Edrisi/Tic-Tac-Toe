@@ -2,7 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #040404;
+  background-color: #000;
+  font-family:  'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .ticTacToe {
   display: grid;
@@ -15,19 +16,28 @@
   margin-top: 5px;
   font-weight: 900;
   font-size: 20px;
-  background-color: #52714d;
   color: aliceblue;
   padding: 10px;
   border-radius: 20px;
 }
+
 #table {
   margin-top: 10px;
-  border: 2px solid #ffffff;
   width: 300px;
   position: relative;
 }
-.tr {
+.tr1{
   display: flex;
+  border-bottom:3px solid #fff;
+}
+.tr2{
+  display: flex;
+  border-bottom:3px solid #fff;
+  border-top:3px solid #fff;
+}
+.tr3{
+  display: flex;
+  border-top:3px solid #fff;
 }
 .th,
 .insideMulti,
@@ -35,39 +45,65 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid #ffffff;
   width: 100px;
   height: 100px;
   background-color: rgb(0, 0, 0);
 }
+.th:last-child{
+border-left: 6px solid #fff;
+}
+.th:nth-last-child(2){
+border-left: 6px solid #fff;
+}
+.insideMulti:last-child{
+border-left: 6px solid #fff;
+}
+.insideMulti:nth-last-child(2){
+border-left: 6px solid #fff;
+}
+.insideCircle:last-child{
+border-left: 6px solid #fff;
+}
+.insideCircle:nth-last-child(2){
+border-left: 6px solid #fff;
+}
+
 .btnReload {
   margin-top: 5px;
-  padding: 10px;
-  border-radius: 50%;
   border: none;
-  color: rgb(20, 229, 170);
-}
-.btnReload i {
+  color: rgb(106, 243, 8);
   font-size: 25px;
+  display: grid;
 }
-.winUser1,
-.winUser2 {
-  display: none;
+.btnReload span {
+  font-size: 12px;
 }
 #oneUserPlay {
+  display: none; 
+  border: none;
+}
+#oneUserPlay .container{
+  width: 50px;
   margin-top: 5px;
-  padding: 10px;
-  color: rgb(20, 229, 170);
+  color: rgb(106, 243, 8);
   border: none;
   font-size: 25px;
-  display: none;
+  display: grid;
 }
 #twoUserPlay {
-  margin-top: 5px;
-  padding: 10px;
+  display: block; 
   border: none;
-  color: rgb(20, 229, 170);
+}
+#twoUserPlay .container{
+  width: 50px;
+  margin-top: 5px;
+  color: rgb(106, 243, 8);
+  border: none;
   font-size: 25px;
+  display: grid;
+}
+#oneUserPlay ,#twoUserPlay ,span {
+  font-size: 12px;
 }
 
 .circle {
@@ -149,28 +185,44 @@
   }
 }
 
-/* .winShow{
-  display: grid;
+.winCount {
+  display: flex;
   justify-items: center;
-} */
-/* .winShow p{
-  color: #fff;
+  justify-content: center;
+}
+.btnReloadCount {
+  margin-top: 5px;
+  border: none;
+  color: rgb(106, 243, 8);
   font-size: 25px;
-  color: rgb(20, 229, 170);
-} */
+  display: grid;
+}
+.btnReloadCount span {
+  font-size: 12px;
+}
 .detailGame p {
-  color: rgb(20, 229, 170);
-  font-size: 20px;
+  color: rgb(250, 172, 5);
+  font-size: 25px;
 }
 .StyleUser1 i {
+  margin-top: 5px;
   padding-right: 5px;
-  color: rgb(20, 229, 170);
-  font-size: 20px;
+  color: rgb(251, 251, 251);
+  font-size: 26px;
+}
+.StyleUser1 span{
+  font-size: 30px;
+  color: rgb(243, 240, 240);
 }
 .StyleUser2 i {
+  margin-top: 5px;
   padding-right: 5px;
-  color: rgb(20, 229, 170);
-  font-size: 20px;
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+}
+.StyleUser2 span{
+  font-size: 30px;
+  color: rgb(255, 255, 255);
 }
 .detailGame {
   display: flex;

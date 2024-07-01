@@ -1,19 +1,28 @@
-let user1 = document.getElementById("user1");
-let user2 = document.getElementById("user2");
+let _user1Count = document.getElementById("user1");
+let _user2Count = document.getElementById("user2");
 let userClicked = document.querySelectorAll("#userClicked");
 let winUser1Show = document.querySelector(".winUser1");
 let winUser2Show = document.querySelector(".winUser2");
 let _th;
 
 function oneUser() {
+  _user1Count.innerText = 0
+  _user2Count.innerText = 0
   twoUserPlay.style = "display :block";
   oneUserPlay.style = "display :none";
   reloadPage();
+
 }
 function twoUser() {
+  _user1Count.innerText = 0
+  _user2Count.innerText = 0
   twoUserPlay.style = "display :none";
   oneUserPlay.style = "display :block";
   reloadPage();
+}
+function reloadCunt(){
+  _user1Count.innerText = 0
+  _user2Count.innerText = 0
 }
 
 function allThRemOn() {
@@ -29,8 +38,6 @@ function createCircle() {
   _th.appendChild(div);
   _th.setAttribute("class", "insideCircle");
   _th.removeAttribute("onclick");
-  // user1.style = "display : none;";
-  // user2.style = "display : block;";
 }
 
 function CreateMultiplication() {
@@ -42,8 +49,6 @@ function CreateMultiplication() {
   _th.appendChild(div2);
   _th.setAttribute("class", "insideMulti");
   _th.removeAttribute("onclick");
-  // user2.style = "display : none;";
-  // user1.style = "display : block;";
 }
 
 function user2Auto() {
@@ -61,8 +66,6 @@ function user2Auto() {
     random.appendChild(div2);
     random.setAttribute("class", "insideMulti");
     random.removeAttribute("onclick");
-    // user2.style = "display : none;";
-    // user1.style = "display : block;";
     User2();
   } else {
     reloadWhenNOWin();
@@ -74,19 +77,36 @@ function thClicked(event) {
   let allTh = document.querySelectorAll(".th");
   if (oneUserPlay.style.display == "block") {
     createCircle();
+    soundUser1()
     if (User1() == false) {
       user2Auto();
+      setTimeout(soundUser2,700)
     }
   } else {
     if (allTh.length % 2 != 0) {
       createCircle();
       User1();
+      soundUser1()
     } else if (allTh.length % 2 == 0) {
       CreateMultiplication();
       User2();
+      soundUser2()
     }
     reloadWhenNOWin();
   }
+  
+}
+function soundUser1(){
+  let audio = document.getElementById('soundUser1')
+  audio.play()
+}
+function soundUser2(){
+  let audio = document.getElementById('soundUser2')
+  audio.play()
+}
+function soundWin(){
+  let audio = document.getElementById('soundWin')
+  audio.play()
 }
 
 function reloadPage() {
@@ -118,16 +138,15 @@ function reloadWhenNOWin() {
 }
 
 function countUser1(){
-  let user1 = document.getElementById("user1")
-  let changeTypeOf = Number(user1.innerText)
+  let changeTypeOf = Number(_user1Count.innerText)
   let result = changeTypeOf + 1 
-  user1.innerHTML = result
+  _user1Count.innerHTML = result
+  return result
 }
 function countUser2(){
-  let user2 = document.getElementById("user2")
-  let changeTypeOf = Number(user2.innerText)
+  let changeTypeOf = Number(_user2Count.innerText)
   let result = changeTypeOf + 1 
-  user2.innerHTML = result
+  _user2Count.innerHTML = result
 }
 function User1() {
   if (
@@ -324,12 +343,11 @@ function User2() {
 }
 
 function winUser1() {
+  soundWin()
   allThRemOn();
   let multiplicationLine1 = document.querySelectorAll(".multiplicationLine1");
   let multiplicationLine2 = document.querySelectorAll(".multiplicationLine2");
   let circle = document.querySelectorAll(".circle");
-  // user1.style = "display : block";
-  // user2.style = "display : none";
   for (let i = 0; i < multiplicationLine2.length; i++) {
     multiplicationLine1[i].style =
       "background-color : rgba(255, 255, 255, 0.36)";
@@ -343,12 +361,11 @@ function winUser1() {
 }
 
 function winUser2() {
+  soundWin()
   allThRemOn();
   let circle = document.querySelectorAll(".circle");
   let multiplicationLine1 = document.querySelectorAll(".multiplicationLine1");
   let multiplicationLine2 = document.querySelectorAll(".multiplicationLine2");
-  // user1.style = "display : none";
-  // user2.style = "display : block";
   for (let i = 0; i < circle.length; i++) {
     circle[i].style = "border-color : rgba(255, 255, 255, 0.36)";
   }
