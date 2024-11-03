@@ -2,4 +2,5 @@
 
 To view the demo click on the link : [https://sahand-edrisi.github.io/myblogs-web-site/](https://sahand-edrisi.github.io/Tic-Tac-Toe/)
 
-![Untitled](https://github.com/user-attachments/assets/d31a7705-d777-47c1-ba79-93c999edc01a)
+![Untitled](https://github.com/user-attachments/assets/563130a8-9e51-4da0-b6e1-9a76f9f39182)
+
